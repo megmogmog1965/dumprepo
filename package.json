@@ -1,5 +1,5 @@
 {
-  "name": "@megmogmog1965/dumprepo",
+  "name": "dumprepo",
   "version": "0.0.1",
   "description": "Dump current directory structure/files into stdout for Claude 3.5 Project.",
   "type": "module",
