@@ -4,7 +4,7 @@
     "exclude": ["node_modules/**", ".next/**", "dumprepo.json"]
   },
   "textFiles": {
-    "include": ["**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx,html,css,scss,sass,csv,xml,json,yaml,yml,md,txt,sh,bat}"],
+    "include": ["**/*"],
     "exclude": ["node_modules/**", ".next/**", "dumprepo.json"]
   }
 }

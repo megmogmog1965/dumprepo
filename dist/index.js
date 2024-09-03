@@ -4,6 +4,7 @@ import path from 'path';
 import process from 'process';
 import { EOL } from 'node:os';
 import { glob } from 'glob';
+import { fileTypeFromFile } from 'file-type';
 const _CONFIG_PATH = './dumprepo.json';
 /**
  * main function.
@@ -25,13 +26,18 @@ async function main() {
         stream.write(allFiles.join(EOL));
         stream.write(EOL.repeat(2));
         // write file contents.
-        textFiles.forEach(filePath => {
+        for (const filePath of textFiles) {
+            // ignore binary file.
+            const type = await fileTypeFromFile(filePath);
+            if (type) {
+                continue;
+            }
             const fileContent = fs.readFileSync(filePath);
             stream.write(separatorLines(`FILE: ${filePath}`));
             stream.write(EOL.repeat(2));
             stream.write(fileContent);
             stream.write(EOL.repeat(2));
-        });
+        }
     }
     finally {
         stream.end();
@@ -71,5 +77,5 @@ function separatorLines(filePath) {
     return `//////////////// ${filePath} ////////////////`.trim();
 }
 // module call.
-main();
+await main();
 //# sourceMappingURL=index.js.map
