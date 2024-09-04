@@ -1,3 +1,5 @@
+[glob pattern]:https://github.com/isaacs/node-glob/tree/v11.0.0?tab=readme-ov-file#glob-primer
+
 # dumprepo
 
 ## Usage
@@ -32,11 +34,11 @@ The command `dumprepo` generates a configuration file `dumprepo.json` on its fir
     "exclude": ["node_modules/**", ".next/**", "dumprepo.json"]
   },
   "textFiles": {
-    "include": ["**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx,html,css,scss,sass,csv,xml,json,yaml,yml,md,txt,sh,bat}"],
-    "exclude": ["node_modules/**", ".next/**", "dumprepo.json"]
+    "include": ["**/*"],
+    "exclude": ["node_modules/**", ".next/**", "dumprepo.json", "*.svg", "package-lock.json"]
   }
 }
 ```
 
-* `projectStructure`: Settings for files to include or exclude in the file list displayed in the Project Structure section.
-* `textFiles`: Settings to determine which files contents should be output.
+* `projectStructure`: [glob pattern] settings for files to include or exclude in the file list displayed in the Project Structure section.
+* `textFiles`: [glob pattern] settings to determine which files contents should be output.

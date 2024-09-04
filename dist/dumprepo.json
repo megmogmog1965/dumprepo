@@ -5,6 +5,6 @@
   },
   "textFiles": {
     "include": ["**/*"],
-    "exclude": ["node_modules/**", ".next/**", "dumprepo.json"]
+    "exclude": ["node_modules/**", ".next/**", "dumprepo.json", "*.svg", "package-lock.json"]
   }
 }

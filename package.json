@@ -1,6 +1,6 @@
 {
   "name": "dumprepo",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Dump current directory structure/files into stdout for Claude 3.5 Project.",
   "type": "module",
   "main": "./dist/index.js",
