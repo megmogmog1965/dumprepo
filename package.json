@@ -1,7 +1,11 @@
 {
   "name": "dumprepo",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Dump current directory structure/files into stdout for Claude 3.5 Project.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/megmogmog1965/dumprepo.git"
+  },
   "type": "module",
   "main": "./dist/index.js",
   "bin": {
