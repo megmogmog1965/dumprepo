@@ -2,9 +2,12 @@
 import fs from 'fs';
 import path from 'path';
 import process from 'process';
+import { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { EOL } from 'node:os';
 import { glob } from 'glob';
 import { fileTypeFromFile } from 'file-type';
+const __dirname = dirname(fileURLToPath(import.meta.url));
 const _CONFIG_PATH = './dumprepo.json';
 /**
  * main function.
@@ -56,7 +59,7 @@ function loadConfig() {
  */
 function createConfigIfNotExists() {
     if (!fs.existsSync(_CONFIG_PATH)) {
-        fs.copyFileSync(path.join(import.meta.dirname, 'dumprepo.json'), _CONFIG_PATH);
+        fs.copyFileSync(path.join(__dirname, 'dumprepo.json'), _CONFIG_PATH);
     }
 }
 /**

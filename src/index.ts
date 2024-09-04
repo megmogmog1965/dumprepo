@@ -3,11 +3,14 @@
 import fs from 'fs'
 import path from 'path'
 import process from 'process'
+import { dirname } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { EOL } from 'node:os'
 import { glob } from 'glob'
 import { fileTypeFromFile } from 'file-type'
 import { Config } from './types.js'
 
+const __dirname = dirname(fileURLToPath(import.meta.url))
 const _CONFIG_PATH ='./dumprepo.json'
 
 /**
@@ -67,7 +70,7 @@ function loadConfig(): Config {
  */
 function createConfigIfNotExists(): void {
   if (!fs.existsSync(_CONFIG_PATH)) {
-    fs.copyFileSync(path.join(import.meta.dirname, 'dumprepo.json'), _CONFIG_PATH)
+    fs.copyFileSync(path.join(__dirname, 'dumprepo.json'), _CONFIG_PATH)
   }
 }
 

@@ -2,7 +2,7 @@
 
 ## Usage
 
-Please use node v16, or higher.
+Please use node v18, or higher.
 
 ```bash
 npx dumprepo

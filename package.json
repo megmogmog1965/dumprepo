@@ -1,6 +1,6 @@
 {
   "name": "dumprepo",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Dump current directory structure/files into stdout for Claude 3.5 Project.",
   "type": "module",
   "main": "./dist/index.js",
@@ -29,5 +29,8 @@
     "eslint": "^9.9.1",
     "globals": "^15.9.0",
     "typescript-eslint": "^8.3.0"
+  },
+  "volta": {
+    "node": "18.20.4"
   }
 }
