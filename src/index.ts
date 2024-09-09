@@ -16,7 +16,7 @@ const _CONFIG_PATH ='./dumprepo.json'
 /**
  * main function.
  */
-async function main() {
+export async function main() {
   // create default config file if not exists.
   createConfigIfNotExists()
 
