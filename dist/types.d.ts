@@ -7,4 +7,5 @@ export interface Config {
         include: string[];
         exclude: string[];
     };
+    dot?: boolean;
 }

@@ -13,13 +13,15 @@ const _CONFIG_PATH = './dumprepo.json';
  * main function.
  */
 export async function main() {
+    var _a;
     // create default config file if not exists.
     createConfigIfNotExists();
     // load config file.
     const config = loadConfig();
+    const dot = (_a = config.dot) !== null && _a !== void 0 ? _a : false;
     // find all target files.
-    const allFiles = await findTargetFiles(config.projectStructure.include, config.projectStructure.exclude);
-    const textFiles = await findTargetFiles(config.textFiles.include, config.textFiles.exclude);
+    const allFiles = await findTargetFiles(config.projectStructure.include, config.projectStructure.exclude, dot);
+    const textFiles = await findTargetFiles(config.textFiles.include, config.textFiles.exclude, dot);
     // to stdout.
     const stream = process.stdout;
     try {
@@ -67,12 +69,14 @@ function createConfigIfNotExists() {
  *
  * @param {string[]} blobIncludes e.g. `*.{js,mjs,cjs,ts,tsx}`
  * @param {string[]} blobExcludes e.g. `node_modules/**", "dist/**`
+ * @param {boolean} dot false = ignores files start with dot.
  * @returns {Promise<string[]>} a list of file paths.
  */
-async function findTargetFiles(blobIncludes, blobExcludes) {
+async function findTargetFiles(blobIncludes, blobExcludes, dot) {
     const paths = await glob(blobIncludes, {
         nodir: true,
         ignore: blobExcludes,
+        dot: dot,
     });
     return paths.sort();
 }
