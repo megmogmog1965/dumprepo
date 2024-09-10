@@ -4,13 +4,13 @@
 
 ## Usage
 
-Please use node v18, or higher.
+Please use **node v18**, or higher.
 
 ```bash
 npx dumprepo
 ```
 
-dumprepo outputs the project's source code as a single bundle to stdout.
+dumprepo outputs the project's source code as a single bundle to stdout. **dumprepo dumps text files only.**
 
 ```
 //////////////// Project Structure ////////////////
@@ -31,11 +31,11 @@ The command `dumprepo` generates a configuration file `dumprepo.json` on its fir
 {
   "projectStructure": {
     "include": ["**/*"],
-    "exclude": ["node_modules/**", ".next/**", "dumprepo.json"]
+    "exclude": ["node_modules/**", "dumprepo.json"]
   },
   "textFiles": {
     "include": ["**/*"],
-    "exclude": ["node_modules/**", ".next/**", "dumprepo.json", "*.svg", "package-lock.json"]
+    "exclude": ["node_modules/**", "dumprepo.json", "*.svg", "package-lock.json"]
   },
   "dot": false
 }

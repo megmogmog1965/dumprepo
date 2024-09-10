@@ -1,6 +1,6 @@
 {
   "name": "dumprepo",
-  "version": "0.0.9",
+  "version": "1.0.0",
   "description": "Dump current directory structure/files into stdout for Claude 3.5 Project.",
   "repository": {
     "type": "git",
